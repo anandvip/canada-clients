@@ -1,656 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Registration - Canada Web Development Services</title>
-    <style>
-        /* CSS Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f7f9fc;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #e74c3c;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #e74c3c;
-        }
-
-        /* Main Content Styles */
-        main {
-            padding: 3rem 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        .form-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
-        .btn-primary {
-            background-color: #e74c3c;
-        }
-
-        .btn-primary:hover {
-            background-color: #c0392b;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .requirements-list {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-        }
-
-        .requirement-card {
-            border-bottom: 1px solid #eee;
-            padding: 1.5rem 0;
-        }
-
-        .requirement-card:last-child {
-            border-bottom: none;
-        }
-
-        .client-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .requirement-date {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-
-        .requirement-text {
-            margin-bottom: 1rem;
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            display: none;
-        }
-
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-danger {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #e74c3c;
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
-
-        /* Checkbox Group Styles */
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            font-weight: normal;
-        }
-        
-        .checkbox-group input[type="checkbox"] {
-            margin-right: 8px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 0 0.5rem;
-            }
-
-            .form-container, .requirements-list {
-                padding: 1.5rem;
-            }
-            
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Loading Spinner */
-        .spinner {
-            width: 40px;
-            height: 40px;
-            margin: 100px auto;
-            background-color: #e74c3c;
-            border-radius: 100%;
-            animation: sk-scaleout 1.0s infinite ease-in-out;
-            display: none;
-        }
-
-        @keyframes sk-scaleout {
-            0% { 
-                transform: scale(0);
-            } 100% {
-                transform: scale(1.0);
-                opacity: 0;
-            }
-        }
-
-        #loadingSpinner {
-            display: none;
-            text-align: center;
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Registration - Canada Web Development Services</title>
+  <style>
+    /* CSS Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Header Styles */
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .logo span {
+      color: #e74c3c;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 2rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #e74c3c;
+    }
+    /* Main Content Styles */
+    main {
+      padding: 3rem 0;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+      text-align: center;
+    }
+    .form-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-control:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #2980b9;
+    }
+    .btn-primary {
+      background-color: #e74c3c;
+    }
+    .btn-primary:hover {
+      background-color: #c0392b;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .requirements-list {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+    }
+    .requirement-card {
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem 0;
+    }
+    .requirement-card:last-child {
+      border-bottom: none;
+    }
+    .client-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+    .requirement-date {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      margin-bottom: 1rem;
+    }
+    .requirement-text {
+      margin-bottom: 1rem;
+    }
+    .alert {
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    /* Footer Styles */
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #e74c3c;
+    }
+    .footer-text {
+      font-size: 0.9rem;
+      color: #bdc3c7;
+    }
+    /* Checkbox Group Styles */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 0.5rem;
+      }
+      .form-container, .requirements-list {
+        padding: 1.5rem;
+      }
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Loading Spinner */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 100px auto;
+      background-color: #e74c3c;
+      border-radius: 100%;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+      display: none;
+    }
+    @keyframes sk-scaleout {
+      0% { 
+        transform: scale(0);
+      } 100% {
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+    #loadingSpinner {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+    }
+    /* Authentication Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 2rem;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .modal-close:hover,
+    .modal-close:focus {
+      color: black;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Canada<span>WebDev</span></div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#register">Register</a></li>
-                        <li><a href="#requirements">Requirements</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </nav>
-            </div>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">Canada<span>WebDev</span></div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <div class="container">
+      <!-- Registration Form Section -->
+      <section id="register">
+        <h2 class="section-title">Client Registration</h2>
+        <div class="alert alert-success" id="successAlert">
+          Registration successful! Your requirements have been submitted.
         </div>
-    </header>
-
-    <!-- Main Content Section -->
-    <main>
-        <div class="container">
-            <!-- Registration Form Section -->
-            <section id="register">
-                <h2 class="section-title">Client Registration</h2>
-                <div class="alert alert-success" id="successAlert">
-                    Registration successful! Your requirements have been submitted.
-                </div>
-                <div class="alert alert-danger" id="errorAlert">
-                    An error occurred. Please try again.
-                </div>
-                <div class="form-container">
-                    <form id="registrationForm">
-                        <div class="form-group">
-                            <label for="clientName">Full Name</label>
-                            <input type="text" class="form-control" id="clientName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientEmail">Email Address</label>
-                            <input type="email" class="form-control" id="clientEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientPhone">Phone Number</label>
-                            <input type="tel" class="form-control" id="clientPhone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="companyName">Company Name (if applicable)</label>
-                            <input type="text" class="form-control" id="companyName">
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Location in Canada</label>
-                            <select class="form-control" id="location" required>
-                                <option value="">Select Province/Territory</option>
-                                <option value="Alberta">Alberta</option>
-                                <option value="British Columbia">British Columbia</option>
-                                <option value="Manitoba">Manitoba</option>
-                                <option value="New Brunswick">New Brunswick</option>
-                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                                <option value="Northwest Territories">Northwest Territories</option>
-                                <option value="Nova Scotia">Nova Scotia</option>
-                                <option value="Nunavut">Nunavut</option>
-                                <option value="Ontario">Ontario</option>
-                                <option value="Prince Edward Island">Prince Edward Island</option>
-                                <option value="Quebec">Quebec</option>
-                                <option value="Saskatchewan">Saskatchewan</option>
-                                <option value="Yukon">Yukon</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="onlinePresenceType">Type of Online Presence Needed</label>
-                            <select class="form-control" id="onlinePresenceType" required>
-                                <option value="">Select What You Need</option>
-                                <option value="Basic Website">Basic Website (About, Services, Contact)</option>
-                                <option value="Business Website">Business Website with More Pages</option>
-                                <option value="Online Store">Online Store to Sell Products</option>
-                                <option value="Portfolio">Portfolio to Show My Work</option>
-                                <option value="Personal Blog">Personal Blog</option>
-                                <option value="Other">Other (Please Specify Below)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="socialMedia">Where Will You Share Your Website? (Select all that apply)</label>
-                            <div class="checkbox-group">
-                                <label><input type="checkbox" name="socialMedia" value="LinkedIn"> LinkedIn</label>
-                                <label><input type="checkbox" name="socialMedia" value="Instagram"> Instagram</label>
-                                <label><input type="checkbox" name="socialMedia" value="Facebook"> Facebook</label>
-                                <label><input type="checkbox" name="socialMedia" value="WhatsApp"> WhatsApp</label>
-                                <label><input type="checkbox" name="socialMedia" value="Email"> Email</label>
-                                <label><input type="checkbox" name="socialMedia" value="Business Card"> Business Card</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="additionalInfo">Additional Information (Optional)</label>
-                            <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Any other details you'd like to share about your business or what you want on your website..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Estimated Budget (CAD)</label>
-                            <select class="form-control" id="budget" required>
-                                <option value="">Select Budget Range</option>
-                                <option value="Under $1,000">Under $1,000</option>
-                                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                                <option value="$10,000 - $20,000">$10,000 - $20,000</option>
-                                <option value="$20,000+">$20,000+</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="timeline">Expected Timeline</label>
-                            <select class="form-control" id="timeline" required>
-                                <option value="">Select Timeline</option>
-                                <option value="Less than 1 month">Less than 1 month</option>
-                                <option value="1-3 months">1-3 months</option>
-                                <option value="3-6 months">3-6 months</option>
-                                <option value="6+ months">6+ months</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit Requirements</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Requirements List Section -->
-            <section id="requirements">
-                <h2 class="section-title">Recent Requirements</h2>
-                <div id="loadingSpinner">
-                    <div class="spinner"></div>
-                    <p>Loading requirements...</p>
-                </div>
-                <div class="requirements-list" id="requirementsList">
-                    <!-- Requirements will be dynamically loaded here -->
-                </div>
-            </section>
+        <div class="alert alert-danger" id="errorAlert">
+          An error occurred. Please try again.
         </div>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Canada<span>WebDev</span></div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#register">Register</a>
-                    <a href="#requirements">Requirements</a>
-                    <a href="#about">About</a>
-                </div>
-                <div class="footer-text">
-                    &copy; 2025 CanadaWebDev. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Firebase Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
-
-    <!-- About Section -->
-    <section id="about" class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
-        <h2 class="section-title">About</h2>
         <div class="form-container">
-            <p>This platform is kept minimalist to avoid clutter and focus just on the basics to get you going with Vipul Anand [Web Developer]. We believe in simplicity and effectiveness in helping Canadian businesses establish their online presence.</p>
-            <h3 style="margin-top: 2rem; font-size: 1.5rem; color: #2c3e50;">Portfolio</h3>
-            <p><em>Coming soon...</em></p>
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="clientName">Full Name</label>
+              <input type="text" class="form-control" id="clientName" required>
+            </div>
+            <div class="form-group">
+              <label for="clientEmail">Email Address</label>
+              <input type="email" class="form-control" id="clientEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">Phone Number</label>
+              <input type="tel" class="form-control" id="clientPhone" required>
+            </div>
+            <div class="form-group">
+              <label for="companyName">Company Name (if applicable)</label>
+              <input type="text" class="form-control" id="companyName">
+            </div>
+            <div class="form-group">
+              <label for="location">Location in Canada</label>
+              <select class="form-control" id="location" required>
+                <option value="">Select Province/Territory</option>
+                <option value="Alberta">Alberta</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Northwest Territories">Northwest Territories</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="Nunavut">Nunavut</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Yukon">Yukon</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="onlinePresenceType">Type of Online Presence Needed</label>
+              <select class="form-control" id="onlinePresenceType" required>
+                <option value="">Select What You Need</option>
+                <option value="Basic Website">Basic Website (About, Services, Contact)</option>
+                <option value="Business Website">Business Website with More Pages</option>
+                <option value="Online Store">Online Store to Sell Products</option>
+                <option value="Portfolio">Portfolio to Show My Work</option>
+                <option value="Personal Blog">Personal Blog</option>
+                <option value="Other">Other (Please Specify Below)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="socialMedia">Where Will You Share Your Website? (Select all that apply)</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="socialMedia" value="LinkedIn"> LinkedIn</label>
+                <label><input type="checkbox" name="socialMedia" value="Instagram"> Instagram</label>
+                <label><input type="checkbox" name="socialMedia" value="Facebook"> Facebook</label>
+                <label><input type="checkbox" name="socialMedia" value="WhatsApp"> WhatsApp</label>
+                <label><input type="checkbox" name="socialMedia" value="Email"> Email</label>
+                <label><input type="checkbox" name="socialMedia" value="Business Card"> Business Card</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="additionalInfo">Additional Information (Optional)</label>
+              <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Any other details you'd like to share about your business or what you want on your website..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="budget">Estimated Budget (CAD)</label>
+              <select class="form-control" id="budget" required>
+                <option value="">Select Budget Range</option>
+                <option value="Under $1,000">Under $1,000</option>
+                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                <option value="$20,000+">$20,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="timeline">Expected Timeline</label>
+              <select class="form-control" id="timeline" required>
+                <option value="">Select Timeline</option>
+                <option value="Less than 1 month">Less than 1 month</option>
+                <option value="1-3 months">1-3 months</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="6+ months">6+ months</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit Requirements</button>
+          </form>
         </div>
-    </section>
+      </section>
 
-    <!-- Main JavaScript -->
-    <script>
-        // Initialize Firebase
-        const firebaseConfig = {
-    apiKey: "AIzaSyBtx0VThVfv0H5lZhA3oGTCU-7CsgD7gX0",
-    authDomain: "canadaclients-fa4f5.firebaseapp.com",
-    projectId: "canadaclients-fa4f5",
-    storageBucket: "canadaclients-fa4f5.firebasestorage.app",
-    messagingSenderId: "150821396916",
-    appId: "1:150821396916:web:8b9711d23ebf3dcdc492e1"
-  };
-        
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-        // Initialize Firestore
-        const db = firebase.firestore();
-        
-        // DOM Elements
-        const registrationForm = document.getElementById('registrationForm');
-        const requirementsList = document.getElementById('requirementsList');
-        const successAlert = document.getElementById('successAlert');
-        const errorAlert = document.getElementById('errorAlert');
-        const loadingSpinner = document.getElementById('loadingSpinner');
-        const submitBtn = document.getElementById('submitBtn');
-        
-        // Form Submission
-        registrationForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Disable the submit button and show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-            
-            // Get form values
-            const clientName = document.getElementById('clientName').value;
-            const clientEmail = document.getElementById('clientEmail').value;
-            const clientPhone = document.getElementById('clientPhone').value;
-            const companyName = document.getElementById('companyName').value;
-            const location = document.getElementById('location').value;
-            const requirements = document.getElementById('requirements').value;
-            const budget = document.getElementById('budget').value;
-            const timeline = document.getElementById('timeline').value;
-            
-            // Get selected social media platforms
-            const socialMediaCheckboxes = document.querySelectorAll('input[name="socialMedia"]:checked');
-            const socialMediaPlatforms = Array.from(socialMediaCheckboxes).map(checkbox => checkbox.value);
-            
-            // Get form values for new fields
-            const onlinePresenceType = document.getElementById('onlinePresenceType').value;
-            const additionalInfo = document.getElementById('additionalInfo').value;
-            
-            // Create client data object
-            const clientData = {
-                name: clientName,
-                email: clientEmail,
-                phone: clientPhone,
-                company: companyName,
-                location: location,
-                onlinePresenceType: onlinePresenceType,
-                socialMediaPlatforms: socialMediaPlatforms,
-                additionalInfo: additionalInfo,
-                budget: budget,
-                timeline: timeline,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            };
-            
-            try {
-                // Add to Firestore
-                await db.collection('clients').add(clientData);
-                
-                // Show success message
-                successAlert.style.display = 'block';
-                errorAlert.style.display = 'none';
-                
-                // Reset form
-                registrationForm.reset();
-                
-                // Send WhatsApp notification (through a webhook or cloud function)
-                sendWhatsAppNotification(clientData);
-                
-                // Load updated requirements list
-                loadRequirements();
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successAlert.style.display = 'none';
-                }, 5000);
-            } catch (error) {
-                console.error("Error adding document: ", error);
-                errorAlert.style.display = 'block';
-                successAlert.style.display = 'none';
-                
-                // Hide error message after 5 seconds
-                setTimeout(() => {
-                    errorAlert.style.display = 'none';
-                }, 5000);
-            } finally {
-                // Re-enable the submit button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Requirements';
-            }
-        });
-        
-        // Function to load requirements
-        async function loadRequirements() {
-            // Show loading spinner
-            loadingSpinner.style.display = 'block';
-            requirementsList.innerHTML = '';
-            
-            try {
-                const snapshot = await db.collection('clients')
-                    .orderBy('timestamp', 'desc')
-                    .limit(10)
-                    .get();
-                
-                if (snapshot.empty) {
-                    requirementsList.innerHTML = '<p class="text-center">No requirements submitted yet.</p>';
-                    return;
-                }
-                
-                snapshot.forEach(doc => {
-                    const data = doc.data();
-                    const date = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleDateString('en-CA') : 'Recently';
-                    
-                    const requirementHTML = `
-                        <div class="requirement-card">
-                            <div class="client-name">${data.name}${data.company ? ' - ' + data.company : ''}</div>
-                            <div class="requirement-date">${date} | ${data.location}</div>
-                            <div class="requirement-text">
-                                <strong>Type of Website:</strong> ${data.onlinePresenceType || 'Not specified'}<br>
-                                ${data.socialMediaPlatforms && data.socialMediaPlatforms.length > 0 ? 
-                                  `<strong>Will Share On:</strong> ${data.socialMediaPlatforms.join(', ')}<br>` : ''}
-                                ${data.additionalInfo ? `<strong>Additional Info:</strong> ${data.additionalInfo}` : ''}
-                            </div>
-                            <div><strong>Budget:</strong> ${data.budget} | <strong>Timeline:</strong> ${data.timeline}</div>
-                        </div>
-                    `;
-                    
-                    requirementsList.innerHTML += requirementHTML;
-                });
-            } catch (error) {
-                console.error("Error loading requirements: ", error);
-                requirementsList.innerHTML = '<p class="text-center">Error loading requirements. Please try again later.</p>';
-            } finally {
-                // Hide loading spinner
-                loadingSpinner.style.display = 'none';
-            }
+      <!-- Requirements List Section -->
+      <section id="requirements">
+        <h2 class="section-title">Recent Requirements</h2>
+        <div id="loadingSpinner">
+          <div class="spinner"></div>
+          <p>Loading requirements...</p>
+        </div>
+        <div class="requirements-list" id="requirementsList">
+          <!-- Requirements will be dynamically loaded here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Canada<span>WebDev</span></div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#register">Register</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-text">
+          &copy; 2025 CanadaWebDev. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Authentication Modal -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="authModalClose">&times;</span>
+      <h2>Please Sign In</h2>
+      <p>You must sign in with Google to submit your requirements.</p>
+      <button class="btn" id="googleAuthBtn">Sign In with Google</button>
+    </div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+  <!-- About Section -->
+  <section id="about" class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
+    <h2 class="section-title">About</h2>
+    <div class="form-container">
+      <p>This platform is kept minimalist to avoid clutter and focus just on the basics to get you going with Vipul Anand [Web Developer]. We believe in simplicity and effectiveness in helping Canadian businesses establish their online presence.</p>
+      <h3 style="margin-top: 2rem; font-size: 1.5rem; color: #2c3e50;">Portfolio</h3>
+      <p><em>Coming soon...</em></p>
+    </div>
+  </section>
+
+  <!-- Main JavaScript -->
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBtx0VThVfv0H5lZhA3oGTCU-7CsgD7gX0",
+      authDomain: "canadaclients-fa4f5.firebaseapp.com",
+      projectId: "canadaclients-fa4f5",
+      storageBucket: "canadaclients-fa4f5.firebasestorage.app",
+      messagingSenderId: "150821396916",
+      appId: "1:150821396916:web:8b9711d23ebf3dcdc492e1"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // DOM Elements
+    const registrationForm = document.getElementById('registrationForm');
+    const requirementsList = document.getElementById('requirementsList');
+    const successAlert = document.getElementById('successAlert');
+    const errorAlert = document.getElementById('errorAlert');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const submitBtn = document.getElementById('submitBtn');
+    const authModal = document.getElementById('authModal');
+    const authModalClose = document.getElementById('authModalClose');
+    const googleAuthBtn = document.getElementById('googleAuthBtn');
+
+    // Local Storage Helper Functions
+    function getPendingRequirements() {
+      const pending = localStorage.getItem('pendingRequirements');
+      return pending ? JSON.parse(pending) : [];
+    }
+
+    function savePendingRequirements(requirementsArray) {
+      localStorage.setItem('pendingRequirements', JSON.stringify(requirementsArray));
+    }
+
+    function storeRequirementLocally(clientData) {
+      const pending = getPendingRequirements();
+      pending.push(clientData);
+      savePendingRequirements(pending);
+    }
+
+    // Function to sync local pending requirements to Firebase
+    async function syncLocalStorageToFirebase() {
+      let pending = getPendingRequirements();
+      if (pending.length === 0) return;
+      let successfulSyncs = 0;
+      // Iterate over a copy of the pending array
+      for (let i = 0; i < pending.length; i++) {
+        try {
+          await db.collection('clients').add(pending[i]);
+          successfulSyncs++;
+          pending.splice(i, 1);
+          i--; // adjust index after removal
+        } catch (error) {
+          console.error("Error syncing requirement:", error);
+          // continue to next requirement
         }
-        
-        // Function to send WhatsApp notification
-        function sendWhatsAppNotification(clientData) {
-            // This would typically be handled by a webhook or Cloud Function
-            // For demonstration purposes, we'll log the info that would be sent
-            console.log('WhatsApp notification would be sent with the following data:', clientData);
-            
-            // In a real implementation, you would call a server endpoint or Firebase Cloud Function
-            // that would trigger the WhatsApp API (via a service like Twilio or directly through WhatsApp Business API)
-            
-            // Example implementation with fetch to a webhook (you would create this endpoint):
-            /*
-            fetch('https://your-webhook-url.com/whatsapp-notification', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    to: 'YOUR_PHONE_NUMBER', // Your WhatsApp number
-                    message: `New client registration: ${clientData.name} from ${clientData.location} has submitted requirements for web development.`,
-                    clientData: clientData
-                }),
-            })
-            .then(response => response.json())
-            .then(data => console.log('WhatsApp notification sent:', data))
-            .catch(error => console.error('Error sending WhatsApp notification:', error));
-            */
+      }
+      savePendingRequirements(pending);
+      if (successfulSyncs > 0) {
+        showSuccess("Requirements successfully synced to Firebase!");
+        loadRequirements(); // refresh UI
+      }
+    }
+
+    // Show Authentication Modal
+    function showAuthModal() {
+      authModal.style.display = 'block';
+    }
+    function closeAuthModal() {
+      authModal.style.display = 'none';
+    }
+
+    // Auth Modal Close Button Event
+    authModalClose.addEventListener('click', closeAuthModal);
+
+    // Google Authentication Button in Modal
+    googleAuthBtn.addEventListener('click', async () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      try {
+        await firebase.auth().signInWithPopup(provider);
+        closeAuthModal();
+        showSuccess("Signed in successfully!");
+      } catch (error) {
+        showError("Google Sign-In failed: " + error.message);
+      }
+    });
+
+    // Form Submission Handler
+    registrationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      // Check if user is authenticated
+      const user = firebase.auth().currentUser;
+      if (!user) {
+        showAuthModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Requirements';
+        return;
+      }
+
+      // Get form values
+      const clientName = document.getElementById('clientName').value;
+      const clientEmail = document.getElementById('clientEmail').value;
+      const clientPhone = document.getElementById('clientPhone').value;
+      const companyName = document.getElementById('companyName').value;
+      const location = document.getElementById('location').value;
+      const onlinePresenceType = document.getElementById('onlinePresenceType').value;
+      const additionalInfo = document.getElementById('additionalInfo').value;
+      const budget = document.getElementById('budget').value;
+      const timeline = document.getElementById('timeline').value;
+      
+      // Get selected social media platforms
+      const socialMediaCheckboxes = document.querySelectorAll('input[name="socialMedia"]:checked');
+      const socialMediaPlatforms = Array.from(socialMediaCheckboxes).map(checkbox => checkbox.value);
+
+      // Create client data object with authorId
+      const clientData = {
+        name: clientName,
+        email: clientEmail,
+        phone: clientPhone,
+        company: companyName,
+        location: location,
+        onlinePresenceType: onlinePresenceType,
+        socialMediaPlatforms: socialMediaPlatforms,
+        additionalInfo: additionalInfo,
+        budget: budget,
+        timeline: timeline,
+        authorId: user.uid,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      };
+
+      // Store in localStorage
+      storeRequirementLocally(clientData);
+
+      try {
+        // Attempt to sync local requirements to Firebase
+        await syncLocalStorageToFirebase();
+        successAlert.style.display = 'block';
+        errorAlert.style.display = 'none';
+        registrationForm.reset();
+        setTimeout(() => {
+          successAlert.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        errorAlert.style.display = 'block';
+        successAlert.style.display = 'none';
+        setTimeout(() => {
+          errorAlert.style.display = 'none';
+        }, 5000);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Requirements';
+      }
+    });
+
+    // Function to load requirements from Firebase and localStorage
+    async function loadRequirements() {
+      loadingSpinner.style.display = 'block';
+      requirementsList.innerHTML = '';
+
+      try {
+        const snapshot = await db.collection('clients')
+          .orderBy('timestamp', 'desc')
+          .limit(10)
+          .get();
+
+        let html = '';
+        if (!snapshot.empty) {
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const date = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleDateString('en-CA') : 'Recently';
+            html += `
+              <div class="requirement-card">
+                <div class="client-name">${data.name}${data.company ? ' - ' + data.company : ''}</div>
+                <div class="requirement-date">${date} | ${data.location}</div>
+                <div class="requirement-text">
+                  <strong>Type of Website:</strong> ${data.onlinePresenceType || 'Not specified'}<br>
+                  ${data.socialMediaPlatforms && data.socialMediaPlatforms.length > 0 ? `<strong>Will Share On:</strong> ${data.socialMediaPlatforms.join(', ')}<br>` : ''}
+                  ${data.additionalInfo ? `<strong>Additional Info:</strong> ${data.additionalInfo}` : ''}
+                </div>
+                <div><strong>Budget:</strong> ${data.budget} | <strong>Timeline:</strong> ${data.timeline}</div>
+              </div>
+            `;
+          });
+        } else {
+          html += '<p class="text-center">No requirements submitted yet.</p>';
         }
-        
-        // Load requirements on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadRequirements();
-        });
-    </script>
+        // Also display any pending (unsynced) requirements from localStorage
+        const pending = getPendingRequirements();
+        if (pending.length > 0) {
+          pending.forEach(item => {
+            html += `
+              <div class="requirement-card" style="opacity: 0.7;">
+                <div class="client-name">${item.name}${item.company ? ' - ' + item.company : ''} <em>(Pending)</em></div>
+                <div class="requirement-date">Pending Submission</div>
+                <div class="requirement-text">
+                  <strong>Type of Website:</strong> ${item.onlinePresenceType || 'Not specified'}<br>
+                  ${item.socialMediaPlatforms && item.socialMediaPlatforms.length > 0 ? `<strong>Will Share On:</strong> ${item.socialMediaPlatforms.join(', ')}<br>` : ''}
+                  ${item.additionalInfo ? `<strong>Additional Info:</strong> ${item.additionalInfo}` : ''}
+                </div>
+                <div><strong>Budget:</strong> ${item.budget} | <strong>Timeline:</strong> ${item.timeline}</div>
+              </div>
+            `;
+          });
+        }
+        requirementsList.innerHTML = html;
+      } catch (error) {
+        console.error("Error loading requirements: ", error);
+        requirementsList.innerHTML = '<p class="text-center">Error loading requirements. Please try again later.</p>';
+      } finally {
+        loadingSpinner.style.display = 'none';
+      }
+    }
+
+    // Attempt to sync any local pending requirements on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadRequirements();
+      syncLocalStorageToFirebase();
+    });
+
+    // Helper functions to show alerts
+    function showSuccess(message) {
+      successAlert.textContent = message;
+      successAlert.style.display = 'block';
+      setTimeout(() => { successAlert.style.display = 'none'; }, 3000);
+    }
+    function showError(message) {
+      errorAlert.textContent = message;
+      errorAlert.style.display = 'block';
+      setTimeout(() => { errorAlert.style.display = 'none'; }, 3000);
+    }
+  </script>
 </body>
 </html>
